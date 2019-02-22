@@ -1,0 +1,39 @@
+<openerp>
+  <data>
+    <record id="product_template_form_view_pos_invoice" model="ir.ui.view">
+			<field name="name">product.template.pos.invoice.form.inherit</field>
+			<field name="model">product.template</field>
+			<field name="inherit_id" ref="product.product_template_only_form_view"/>
+			<field name="arch" type="xml">
+				<field name="categ_id" position="after" >
+                    <field name="use_product_general" />
+				</field>
+			</field>
+		</record>
+
+
+		<record id="view_partner_pos_invoice_form" model="ir.ui.view">
+			<field name="name">res.partner.pos.invoice.form.inherit</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="account.view_partner_property_form"/>
+			<field name="arch" type="xml">
+				<field name="property_account_position_id" position="after" >
+                    <field name="use_partner_general" />
+				</field>
+			</field>
+		</record>
+
+	 <!-- <record id="invoice_form_view_pos_invoice" model="ir.ui.view">
+			<field name="name">invoice_form.form.inherit</field>
+			<field name="model">account.invoice</field>
+			<field name="inherit_id" ref="account.invoice_form"/>
+			<field name="arch" type="xml">
+				<button name="action_invoice_open" position="after">
+                            <button name="assign_payment_invoice_global" string="Ajustar pagos" type="object" states="open" class="oe_highlight"/>
+        		</button>
+			</field>
+		</record> -->
+   
+
+  </data>
+</openerp>

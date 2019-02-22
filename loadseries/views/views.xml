@@ -1,0 +1,17 @@
+<openerp>
+  <data>
+      <record id="view_loadstockpicking_form_inherit" model="ir.ui.view">
+            <field name="name">view.loadstockpicking.form.add.text.field</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                
+                <xpath expr="//header/button[@name='action_toggle_is_locked']" position="after">
+                   <button name="update_series" states="done" string="Actualizar Series" type="object" invisible="1"/>
+                   <button name="loads_series"  string="Cargar Series" type="object"/>
+                    <button name="series_aleatoria"  string="Cargar Series aleatoriamente" type="object"/>
+                </xpath>
+             </field>
+        </record>
+  </data>
+</openerp>
